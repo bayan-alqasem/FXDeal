@@ -1,0 +1,15 @@
+version: "2.15.1"
+services:
+ mongocontainer:
+  image: mongo:latest
+  container_name: "mongocontainer"
+  ports:
+   - 27017:27017
+ 
+ springdockercompose:
+  image: springboot-fxdeal:1.0
+  container_name: "FXDeal"
+  ports:
+   - 9090:8080
+  links:
+   - mongocontainer
